@@ -120,7 +120,7 @@ function showWinDialog(game){
         var who=game.getCurrentPlayer().translatedColor;
         $("#game-won h4").html(who+'赢了!');
         gameInfo.value=who+' won.'
-        $("#win-content").html(who+'赢了. 在对战一局?');
+        $("#win-content").html(who+'赢了. 再对战一局?');
         $('#happy-outer').fadeIn(500);
     }else{
         if(game.getCurrentPlayer() instanceof HumanPlayer){
@@ -130,7 +130,7 @@ function showWinDialog(game){
             $('#sad-outer').fadeIn(500);
         }else{
             $("#game-won h4").html('你输了.');
-            $("#win-content").html('唉. 你输给了你的电脑. 再挑战一局?');
+            $("#win-content").html('唉. 你输给了电脑酱. 再挑战一局?');
             gameInfo.value='Computer won.'
             $('#happy-outer').fadeIn(500);
         }
