@@ -5,9 +5,7 @@ function Player(color){
 
 Player.prototype.myTurn = function(){
     this.game.setCurrentColor(this.color);
-    gameInfo.setText((function(string){
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    })(this.color)+"'s turn.");
+    gameInfo.setText((this.translatedColor)+"执棋");
     gameInfo.setColor(this.color);
     gameInfo.setBlinking(false);
 };
@@ -28,7 +26,7 @@ HumanPlayer.prototype.myTurn = function(){
     Player.prototype.myTurn.call(this);
     this.game.toHuman(this.color);
     if(this.other instanceof AIPlayer){
-        gameInfo.setText('您的回合');
+        gameInfo.setText('您执棋');
     }
 };
 
