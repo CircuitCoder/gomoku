@@ -117,7 +117,7 @@ $(document).ready(function(){
 function showWinDialog(game){
     gameInfo.setBlinking(false);
     if(game.mode === 'hvh'){
-        var who=(function(string){ return string.charAt(0).toUpperCase() + string.slice(1);})(game.getCurrentPlayer().color);
+        var who=game.getCurrentPlayer().translatedColor;
         $("#game-won h4").html(who+'赢了!');
         gameInfo.value=who+' won.'
         $("#win-content").html(who+'赢了. 在对战一局?');
