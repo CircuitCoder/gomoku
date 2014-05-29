@@ -1,6 +1,10 @@
 // Agents that represent either a player or an AI
 function Player(color){
     this.color = color;
+    
+    if(color=="black") this.translatedColor="黑方"
+    else if(color=="white") this.translatedColor="白方"
+    else this.translatedColor="某高手"
 }
 
 Player.prototype.myTurn = function(){
