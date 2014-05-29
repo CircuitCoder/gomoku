@@ -118,19 +118,19 @@ function showWinDialog(game){
     gameInfo.setBlinking(false);
     if(game.mode === 'hvh'){
         var who=(function(string){ return string.charAt(0).toUpperCase() + string.slice(1);})(game.getCurrentPlayer().color);
-        $("#game-won h4").html(who+' Won!');
+        $("#game-won h4").html(who+'赢了!');
         gameInfo.value=who+' won.'
-        $("#win-content").html(who+' won the game. Play again?');
+        $("#win-content").html(who+'赢了. 在对战一局?');
         $('#happy-outer').fadeIn(500);
     }else{
         if(game.getCurrentPlayer() instanceof HumanPlayer){
-            $("#game-won h4").html('You Won!');
-            $("#win-content").html('You won the game. Play again?');
+            $("#game-won h4").html('你赢了!');
+            $("#win-content").html('你赢了!要再来一局嘛?');
             gameInfo.value='You won.'
             $('#sad-outer').fadeIn(500);
         }else{
-            $("#game-won h4").html('You Lost.');
-            $("#win-content").html('Meh. You lost to the computer. Play again?');
+            $("#game-won h4").html('你输了.');
+            $("#win-content").html('唉. 你输给了你的电脑. 再挑战一局?');
             gameInfo.value='Computer won.'
             $('#happy-outer').fadeIn(500);
         }
